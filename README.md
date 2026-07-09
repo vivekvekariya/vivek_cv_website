@@ -19,6 +19,17 @@ Think of the page in three layers:
 
 If you want to change the website later, usually you edit `index.html` first, then adjust `styles.css` if the layout needs a new look, and only touch `script.js` for interactions.
 
+## How the theme works
+
+The blue look is controlled in `styles.css` through CSS variables near the top of the file.
+
+- `--bg` controls the page background.
+- `--panel` and `--panel-strong` control card surfaces.
+- `--accent` controls buttons, links, and highlights.
+- `:root[data-theme="dark"]` contains the dark-mode override.
+
+If you want a different palette later, change those variables first. That will update the whole site faster than editing individual sections.
+
 ## How to open it
 
 You can open `index.html` directly in the browser, or run a local server from this folder:
