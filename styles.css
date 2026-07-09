@@ -402,6 +402,52 @@ h4 {
   padding: 1.35rem;
 }
 
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.about-copy {
+  display: grid;
+  align-content: start;
+  gap: 0.4rem;
+}
+
+.about-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.metric-card {
+  display: grid;
+  align-content: center;
+  gap: 0.5rem;
+  min-height: 7.4rem;
+  padding: 1.2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--panel-strong);
+  box-shadow: var(--shadow);
+}
+
+.metric-card__value {
+  margin: 0;
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.metric-card__label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
 .timeline {
   display: grid;
   gap: 1rem;
@@ -566,6 +612,10 @@ h4 {
     grid-template-columns: 1fr;
   }
 
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
   .hero {
     min-height: auto;
   }
@@ -590,6 +640,7 @@ h4 {
   }
 
   .stats,
+  .about-metrics,
   .grid-grid,
   .grid-grid--two {
     grid-template-columns: 1fr;
