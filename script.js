@@ -1,35 +1,7 @@
 const root = document.documentElement;
-const themeToggle = document.querySelector('[data-theme-toggle]');
 const revealItems = document.querySelectorAll('.reveal');
 const navLinks = Array.from(document.querySelectorAll('.nav a[href^="#"]'));
 const yearTarget = document.querySelector('[data-current-year]');
-
-const savedTheme = window.localStorage.getItem('vivek-portfolio-theme');
-if (savedTheme) {
-  root.dataset.theme = savedTheme;
-}
-
-if (!root.dataset.theme) {
-  root.dataset.theme = 'light';
-}
-
-const updateThemeButton = () => {
-  if (!themeToggle) {
-    return;
-  }
-
-  const isLight = root.dataset.theme === 'light';
-  themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
-  themeToggle.querySelector('.theme-toggle__icon').textContent = isLight ? '◑' : '◐';
-};
-
-updateThemeButton();
-
-themeToggle?.addEventListener('click', () => {
-  root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
-  window.localStorage.setItem('vivek-portfolio-theme', root.dataset.theme);
-  updateThemeButton();
-});
 
 if (yearTarget) {
   yearTarget.textContent = String(new Date().getFullYear());

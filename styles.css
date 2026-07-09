@@ -146,8 +146,7 @@ h4 {
   gap: 0.35rem;
 }
 
-.nav a,
-.theme-toggle {
+.nav a {
   border: 1px solid transparent;
   border-radius: 999px;
   padding: 0.6rem 0.9rem;
@@ -157,20 +156,11 @@ h4 {
 
 .nav a:hover,
 .nav a[aria-current="page"],
-.theme-toggle:hover {
+.nav a:focus-visible {
   color: var(--text);
   border-color: var(--line);
   background: var(--accent-soft);
   transform: translateY(-1px);
-}
-
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  background: transparent;
-  cursor: pointer;
-  font: inherit;
 }
 
 .section {
@@ -242,9 +232,11 @@ h4 {
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 8vw, 5.8rem);
+  font-size: clamp(2.55rem, 6.2vw, 4.7rem);
   letter-spacing: -0.05em;
-  max-width: 11ch;
+  max-width: 12ch;
+  text-wrap: balance;
+  hyphens: none;
 }
 
 .hero h1 span {
@@ -254,7 +246,7 @@ h4 {
 
 .lede {
   margin-top: 1.25rem;
-  max-width: 60ch;
+  max-width: 54ch;
   font-size: 1.05rem;
   color: var(--muted);
 }
@@ -484,6 +476,25 @@ h4 {
 .list-clean {
   padding-left: 1.05rem;
   margin: 0;
+}
+
+.publication-link {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.1rem 0;
+  color: var(--text);
+}
+
+.publication-link span {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.publication-link:hover span,
+.publication-link:focus-visible span {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 .list-clean li + li {
